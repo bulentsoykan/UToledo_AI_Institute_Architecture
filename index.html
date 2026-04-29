@@ -360,6 +360,98 @@
     background: linear-gradient(90deg, var(--blue-900), var(--blue-700));
   }
 
+  /* Cross-college coalition (post-pillar growth section) */
+  .coalition {
+    margin: 28px 0 0;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .coalition-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    background: #fff;
+    color: var(--blue-800);
+    border-bottom: 3px solid var(--gold-400);
+  }
+  .coalition-mark {
+    flex: 0 0 auto;
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    background: #fff;
+    border: 2px solid var(--gold-400);
+    color: var(--gold-600);
+    font-weight: 800;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    line-height: 1;
+  }
+  .coalition-titles { display: flex; flex-direction: column; }
+  .coalition-titles .pillar-sub { color: var(--gold-600); }
+  .coalition-titles .pillar-title { color: var(--blue-800); }
+  .coalition-body { padding: 22px 22px 24px; }
+
+  .growth-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 800px) { .growth-grid { grid-template-columns: 1fr; } }
+
+  .growth-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--blue-100);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .growth-card.primary {
+    border-left-color: var(--gold-400);
+    background: #fff;
+    grid-column: span 1;
+  }
+  .growth-card h3 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    color: var(--blue-800);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .growth-tag {
+    display: inline-block;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-weight: 700;
+    color: var(--gold-600);
+    margin: 0 0 10px;
+  }
+  .growth-card:not(.primary) .growth-tag { color: var(--muted); }
+  .growth-card ul {
+    margin: 6px 0 10px;
+    padding-left: 18px;
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .growth-card ul li { margin-bottom: 4px; }
+  .growth-card ul li strong { color: var(--blue-800); }
+  .growth-grow {
+    margin: 8px 0 0;
+    font-size: 13px;
+    color: var(--muted);
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+    line-height: 1.5;
+  }
+  .growth-grow strong { color: var(--blue-800); }
+
   /* Footer note */
   .footnote {
     margin-top: 36px;
@@ -643,8 +735,92 @@
     </div>
   </section>
 
+  <!-- Cross-college coalition: how the rest of UToledo folds into the framework -->
+  <section class="coalition" aria-labelledby="coalition-heading">
+    <div class="coalition-head">
+      <div class="coalition-mark" aria-hidden="true">+</div>
+      <div class="coalition-titles">
+        <div class="pillar-sub">Cross-College Growth</div>
+        <div class="pillar-title" id="coalition-heading">Expanding the Coalition</div>
+      </div>
+    </div>
+    <div class="coalition-body">
+      <p class="pillar-intro">The four pillars are anchored in engineering, medicine, and the natural sciences &mdash; but AI maturity at UToledo will require every college. Two have already raised their hands; several others have natural on-ramps. Each brings a distinct kind of growth to the institute.</p>
+
+      <div class="growth-grid">
+
+        <article class="growth-card primary">
+          <h3>Judith Herb College of Arts, Social Sciences and Education</h3>
+          <span class="growth-tag">Active interest</span>
+          <ul>
+            <li><strong>Digital humanities</strong> &mdash; computational analysis of historical archives, literature, and Toledo&rsquo;s civic records.</li>
+            <li><strong>Ethics &amp; society</strong> &mdash; philosophy and communication faculty anchor the human-context side of the Trustworthy AI horizontal.</li>
+            <li><strong>K&ndash;16 AI literacy</strong> &mdash; education programs translate research into teacher-prep curricula and classroom modules.</li>
+            <li><strong>Generative arts &amp; media</strong> &mdash; visual, music, and theater faculty for AI as exhibition, performance, and design.</li>
+            <li><strong>Spatial &amp; social science</strong> &mdash; Geography &amp; Planning brings GIS and urban analytics to the Environmental and Manufacturing verticals.</li>
+          </ul>
+          <p class="growth-grow"><strong>What they grow:</strong> the human-context layer the matrix needs to land in real classrooms, communities, and cultural institutions &mdash; plus the policy and ethics depth that makes federal Trustworthy-AI grants competitive.</p>
+        </article>
+
+        <article class="growth-card primary">
+          <h3>John B. and Lillian E. Neff College of Business and Innovation</h3>
+          <span class="growth-tag">Active interest</span>
+          <ul>
+            <li><strong>Applied business analytics</strong> &mdash; the new online M.A.B.A. program is a natural feeder of trained students into research and industry partnerships.</li>
+            <li><strong>Finance, risk &amp; ESG modeling</strong> &mdash; fraud detection, market microstructure, climate-risk pricing.</li>
+            <li><strong>Supply chain &amp; operations</strong> &mdash; direct partner to the Advanced Manufacturing &amp; Logistics vertical.</li>
+            <li><strong>Information systems &amp; HR analytics</strong> &mdash; workforce modeling, organizational adoption of AI tools.</li>
+            <li><strong>Innovation &amp; tech transfer</strong> &mdash; commercialization pathways that turn faculty research into licensable products and regional jobs.</li>
+          </ul>
+          <p class="growth-grow"><strong>What they grow:</strong> the commercialization engine that converts research models into revenue, plus the analytics workforce regional employers are already asking for.</p>
+        </article>
+
+        <article class="growth-card">
+          <h3>College of Law</h3>
+          <span class="growth-tag">Natural on-ramp</span>
+          <ul>
+            <li><strong>AI policy &amp; governance</strong> &mdash; framing for Pillar 1&rsquo;s policy committee.</li>
+            <li><strong>IP, data licensing &amp; liability</strong> &mdash; clears legal questions around training data, model artifacts, and clinical deployment.</li>
+          </ul>
+          <p class="growth-grow"><strong>What they grow:</strong> the legal scaffolding that lets sensitive research actually leave the lab.</p>
+        </article>
+
+        <article class="growth-card">
+          <h3>College of Health and Human Services</h3>
+          <span class="growth-tag">Natural on-ramp</span>
+          <ul>
+            <li><strong>Public-health AI</strong> &mdash; population-scale modeling of social determinants and access.</li>
+            <li><strong>Social work &amp; behavioral data</strong> &mdash; case-load analytics with strict ethical guardrails, complementing the Healthcare vertical from a community-services angle.</li>
+          </ul>
+          <p class="growth-grow"><strong>What they grow:</strong> the population-health complement to UTMC&rsquo;s clinical work &mdash; the &ldquo;outside the hospital&rdquo; half of healthcare AI.</p>
+        </article>
+
+        <article class="growth-card">
+          <h3>College of Pharmacy and Pharmaceutical Sciences</h3>
+          <span class="growth-tag">Already active in matrix</span>
+          <ul>
+            <li><strong>Drug discovery &amp; pharmacogenomics</strong> &mdash; foundation-model-driven candidate screening and patient-specific therapy modeling.</li>
+            <li><strong>Clinical pharmacy informatics</strong> &mdash; integrating with the EHR and clinical decision support work.</li>
+          </ul>
+          <p class="growth-grow"><strong>What they grow:</strong> a molecular-to-bedside pipeline that broadens the Healthcare vertical beyond imaging and notes.</p>
+        </article>
+
+        <article class="growth-card">
+          <h3>University College</h3>
+          <span class="growth-tag">Reach &amp; workforce</span>
+          <ul>
+            <li><strong>Stackable AI micro-credentials</strong> &mdash; certificates for working professionals who do not need a full degree.</li>
+            <li><strong>Adult &amp; continuing education</strong> &mdash; the institute&rsquo;s primary channel for regional workforce reskilling.</li>
+          </ul>
+          <p class="growth-grow"><strong>What they grow:</strong> the institute&rsquo;s reach into Northwest Ohio&rsquo;s existing workforce &mdash; the constituency that drives state-level political and funding support.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <p class="footnote">
-    <strong>Why this structure.</strong> It separates the academic mission from the research engine while building a bridge between them, and it ensures faculty have the hardware and human support they need to succeed.
+    <strong>Why this structure.</strong> It separates the academic mission from the research engine while building a bridge between them, ensures faculty have the hardware and human support they need to succeed, and leaves explicit on-ramps for every UToledo college to fold in as the coalition grows.
   </p>
 
 </main>
