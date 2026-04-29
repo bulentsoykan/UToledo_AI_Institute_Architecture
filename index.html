@@ -67,6 +67,27 @@
     max-width: 70ch;
     font-size: 16px;
   }
+  .top-nav {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+  .top-nav a {
+    color: #cdd6e4;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: color .15s, border-color .15s;
+  }
+  .top-nav a:hover { color: #fff; }
+  .top-nav a.active {
+    color: #fff;
+    border-bottom-color: var(--gold-400);
+  }
 
   /* Layout */
   .wrap {
@@ -364,6 +385,10 @@
 
 <header class="masthead">
   <div class="masthead-inner">
+    <nav class="top-nav" aria-label="Primary site navigation">
+      <a class="active" href="index.html" aria-current="page">Architecture</a>
+      <a href="community.html">Community of Practice</a>
+    </nav>
     <div class="eyebrow">The University of Toledo</div>
     <h1>AI Institute &mdash; Organizational Architecture</h1>
     <p class="lede">A four-pillar framework: governance on top, an academic teaching arm and an applied research matrix in the middle, and a shared infrastructure foundation underneath.</p>

@@ -1,0 +1,345 @@
+{
+  "faculty": [
+    {
+      "id": "f001",
+      "name": "Dr. Maria Chen",
+      "title": "Professor & Director, Lake Erie Center",
+      "college": "College of Natural Sciences and Mathematics",
+      "department": "Environmental Sciences",
+      "ai_focus": ["Computer Vision & Perception", "Machine Learning & Foundation Models"],
+      "domains": ["Environmental & Water Science"],
+      "projects": ["Lake Erie Algal Bloom Forecasting", "Satellite Watershed Monitoring"],
+      "email": "maria.chen@utoledo.edu",
+      "office": "Bowman-Oddy 3050"
+    },
+    {
+      "id": "f002",
+      "name": "Dr. Rajesh Patel",
+      "title": "Associate Professor",
+      "college": "College of Medicine and Life Sciences",
+      "department": "Internal Medicine",
+      "ai_focus": ["Natural Language Processing"],
+      "domains": ["Healthcare & Medicine"],
+      "projects": ["EHR Phenotyping for Rare Disease", "Clinical Note Summarization"],
+      "email": "rajesh.patel@utoledo.edu",
+      "office": "Health Education Building 2206"
+    },
+    {
+      "id": "f003",
+      "name": "Dr. Emily Walker",
+      "title": "Associate Professor",
+      "college": "College of Engineering",
+      "department": "Mechanical, Industrial & Manufacturing Engineering",
+      "ai_focus": ["Machine Learning & Foundation Models"],
+      "domains": ["Energy & Materials Science", "Advanced Manufacturing & Logistics"],
+      "projects": ["Battery Materials Discovery via Foundation Models"],
+      "email": "emily.walker@utoledo.edu",
+      "office": "Nitschke Hall 4040"
+    },
+    {
+      "id": "f004",
+      "name": "Dr. James Okonkwo",
+      "title": "Assistant Professor",
+      "college": "College of Engineering",
+      "department": "Electrical Engineering & Computer Science",
+      "ai_focus": ["Trustworthy & Secure AI"],
+      "domains": ["Healthcare & Medicine", "Energy & Materials Science"],
+      "projects": ["Trustworthy Clinical AI Auditing Toolkit"],
+      "email": "james.okonkwo@utoledo.edu",
+      "office": "Nitschke Hall 2050"
+    },
+    {
+      "id": "f005",
+      "name": "Dr. Sophia Reyes",
+      "title": "Professor",
+      "college": "College of Engineering",
+      "department": "Bioengineering",
+      "ai_focus": ["Computer Vision & Perception", "Machine Learning & Foundation Models"],
+      "domains": ["Healthcare & Medicine"],
+      "projects": ["Tumor Detection in Multi-modal MRI"],
+      "email": "sophia.reyes@utoledo.edu",
+      "office": "Nitschke Hall 5030"
+    },
+    {
+      "id": "f006",
+      "name": "Dr. David Kim",
+      "title": "Associate Professor",
+      "college": "College of Engineering",
+      "department": "Mechanical, Industrial & Manufacturing Engineering",
+      "ai_focus": ["Machine Learning & Foundation Models", "Computer Vision & Perception"],
+      "domains": ["Advanced Manufacturing & Logistics"],
+      "projects": ["Glass Furnace Predictive Maintenance", "Assembly-Line Defect Detection"],
+      "email": "david.kim@utoledo.edu",
+      "office": "Nitschke Hall 4106"
+    },
+    {
+      "id": "f007",
+      "name": "Dr. Linda Foster",
+      "title": "Professor",
+      "college": "College of Engineering",
+      "department": "Civil & Environmental Engineering",
+      "ai_focus": ["Machine Learning & Foundation Models", "Natural Language Processing"],
+      "domains": ["Environmental & Water Science"],
+      "projects": ["Watershed Regulation NLP Synthesis", "Stormwater Sensor Networks"],
+      "email": "linda.foster@utoledo.edu",
+      "office": "Nitschke Hall 3010"
+    },
+    {
+      "id": "f008",
+      "name": "Dr. Ahmed Haque",
+      "title": "Professor & Department Chair",
+      "college": "College of Engineering",
+      "department": "Electrical Engineering & Computer Science",
+      "ai_focus": ["Machine Learning & Foundation Models", "Trustworthy & Secure AI"],
+      "domains": ["Energy & Materials Science"],
+      "projects": ["Secure Digital Twin for Nuclear Engineering"],
+      "email": "ahmed.haque@utoledo.edu",
+      "office": "Nitschke Hall 2025"
+    },
+    {
+      "id": "f009",
+      "name": "Dr. Nina Brooks",
+      "title": "Assistant Professor",
+      "college": "Neff College of Business and Innovation",
+      "department": "Information Operations & Technology Management",
+      "ai_focus": ["Natural Language Processing", "Machine Learning & Foundation Models"],
+      "domains": ["Advanced Manufacturing & Logistics"],
+      "projects": ["Supplier-Contract Mining for Root-Cause Analysis"],
+      "email": "nina.brooks@utoledo.edu",
+      "office": "Stranahan Hall 3000"
+    },
+    {
+      "id": "f010",
+      "name": "Dr. Carlos Mendez",
+      "title": "Associate Professor",
+      "college": "College of Natural Sciences and Mathematics",
+      "department": "Physics & Astronomy",
+      "ai_focus": ["Machine Learning & Foundation Models"],
+      "domains": ["Energy & Materials Science"],
+      "projects": ["Battery Materials Discovery via Foundation Models", "Solar Cell Efficiency Optimization"],
+      "email": "carlos.mendez@utoledo.edu",
+      "office": "McMaster Hall 4020"
+    },
+    {
+      "id": "f011",
+      "name": "Dr. Priya Singh",
+      "title": "Associate Professor",
+      "college": "College of Pharmacy and Pharmaceutical Sciences",
+      "department": "Pharmacology",
+      "ai_focus": ["Machine Learning & Foundation Models", "Natural Language Processing"],
+      "domains": ["Healthcare & Medicine"],
+      "projects": ["Genomic Prediction for Personalized Pharmacotherapy"],
+      "email": "priya.singh@utoledo.edu",
+      "office": "Wolfe Hall 1310"
+    },
+    {
+      "id": "f012",
+      "name": "Dr. Tom Wilson",
+      "title": "Associate Professor",
+      "college": "College of Arts and Letters",
+      "department": "Geography & Planning",
+      "ai_focus": ["Computer Vision & Perception"],
+      "domains": ["Environmental & Water Science"],
+      "projects": ["Drone-based Land Use Classification"],
+      "email": "tom.wilson@utoledo.edu",
+      "office": "Snyder Memorial 3000"
+    }
+  ],
+  "projects": [
+    {
+      "id": "p001",
+      "title": "Lake Erie Algal Bloom Forecasting",
+      "lead_pi": "Dr. Maria Chen",
+      "co_pis": ["Dr. Tom Wilson"],
+      "funding": "NSF — $1.2M (2024–2027)",
+      "domain": "Environmental & Water Science",
+      "ai_focus": ["Computer Vision & Perception", "Machine Learning & Foundation Models"],
+      "status": "Active",
+      "challenges": "Fusing multi-spectral satellite imagery with in-situ buoy sensor streams; modeling nonlinear nutrient dynamics under shifting climate baselines; running ensembles at 30-minute cadence on bursty cloud GPU."
+    },
+    {
+      "id": "p002",
+      "title": "EHR Phenotyping for Rare Disease",
+      "lead_pi": "Dr. Rajesh Patel",
+      "co_pis": ["Dr. James Okonkwo"],
+      "funding": "NIH R01 — $2.8M (2025–2030)",
+      "domain": "Healthcare & Medicine",
+      "ai_focus": ["Natural Language Processing"],
+      "status": "Active",
+      "challenges": "De-identifying 4M+ unstructured clinical notes inside the secure enclave; adapting open-weight clinical LLMs to UToledo's note conventions; auditing for cohort bias before deployment."
+    },
+    {
+      "id": "p003",
+      "title": "Glass Furnace Predictive Maintenance",
+      "lead_pi": "Dr. David Kim",
+      "co_pis": [],
+      "funding": "Industry partnership — $480K (2025–2026)",
+      "domain": "Advanced Manufacturing & Logistics",
+      "ai_focus": ["Machine Learning & Foundation Models"],
+      "status": "Active",
+      "challenges": "Sensor drift over 8000-hour furnace campaigns; very few labeled failure events; transferring models across furnace generations without retraining from scratch."
+    },
+    {
+      "id": "p004",
+      "title": "Tumor Detection in Multi-modal MRI",
+      "lead_pi": "Dr. Sophia Reyes",
+      "co_pis": ["Dr. Rajesh Patel"],
+      "funding": "NIH R21 — $410K (2025–2027)",
+      "domain": "Healthcare & Medicine",
+      "ai_focus": ["Computer Vision & Perception"],
+      "status": "Active",
+      "challenges": "Aligning T1, T2, and DWI sequences across scanners; training on small UTMC cohorts without overfitting; producing radiologist-readable saliency that survives clinical scrutiny."
+    },
+    {
+      "id": "p005",
+      "title": "Battery Materials Discovery via Foundation Models",
+      "lead_pi": "Dr. Carlos Mendez",
+      "co_pis": ["Dr. Emily Walker"],
+      "funding": "DOE — $1.6M (2024–2027)",
+      "domain": "Energy & Materials Science",
+      "ai_focus": ["Machine Learning & Foundation Models"],
+      "status": "Active",
+      "challenges": "Pre-training on materials-science literature without contaminating the held-out validation set; coupling LLM hypothesis generation to DFT verification at scale; budgeting Ohio Supercomputer Center hours."
+    },
+    {
+      "id": "p006",
+      "title": "Secure Digital Twin for Nuclear Engineering",
+      "lead_pi": "Dr. Ahmed Haque",
+      "co_pis": ["Dr. James Okonkwo"],
+      "funding": "DOE / INL partnership — $2.1M (2025–2028)",
+      "domain": "Energy & Materials Science",
+      "ai_focus": ["Trustworthy & Secure AI", "Machine Learning & Foundation Models"],
+      "status": "Active",
+      "challenges": "Provenance-tracked training pipelines that meet DOE security requirements; tamper-evident model artifacts; running sensitive simulations only inside the secure enclave with full audit logging."
+    },
+    {
+      "id": "p007",
+      "title": "Trustworthy Clinical AI Auditing Toolkit",
+      "lead_pi": "Dr. James Okonkwo",
+      "co_pis": ["Dr. Rajesh Patel", "Dr. Priya Singh"],
+      "funding": "Internal Seed Grant — $75K (2026)",
+      "domain": "Healthcare & Medicine",
+      "ai_focus": ["Trustworthy & Secure AI"],
+      "status": "Pilot",
+      "challenges": "Defining bias metrics that map to UTMC's patient demographics; building report templates that radiologists and IRB reviewers can both read; integrating with the MLOps stack without slowing research velocity."
+    },
+    {
+      "id": "p008",
+      "title": "Watershed Regulation NLP Synthesis",
+      "lead_pi": "Dr. Linda Foster",
+      "co_pis": ["Dr. Nina Brooks"],
+      "funding": "EPA pilot — $220K (2026)",
+      "domain": "Environmental & Water Science",
+      "ai_focus": ["Natural Language Processing"],
+      "status": "Pilot",
+      "challenges": "Aligning state vs. federal regulatory language; structured extraction from PDFs of inconsistent quality; producing summaries that hold up to legal review."
+    }
+  ],
+  "forum_categories": [
+    {
+      "id": "grant",
+      "name": "Grant & Proposal Teaming",
+      "description": "Pre-proposal discovery and interdisciplinary team building.",
+      "threads": [
+        {
+          "title": "Looking for an NLP collaborator for an NIH R01 on EHR phenotyping",
+          "author": "Dr. R. Patel",
+          "replies": 6,
+          "views": 142,
+          "last_active": "2 days ago"
+        },
+        {
+          "title": "DOE FOA on grid resilience — pre-application discussion",
+          "author": "Dr. A. Haque",
+          "replies": 11,
+          "views": 287,
+          "last_active": "5 hours ago"
+        },
+        {
+          "title": "Forming a team for the NSF AI Institutes Track 2 RFP",
+          "author": "Dr. M. Chen",
+          "replies": 18,
+          "views": 612,
+          "last_active": "yesterday"
+        },
+        {
+          "title": "Industry match: glass-manufacturing partner interested in defect detection",
+          "author": "Dr. D. Kim",
+          "replies": 4,
+          "views": 88,
+          "last_active": "3 days ago"
+        }
+      ]
+    },
+    {
+      "id": "tech",
+      "name": "Technical Q&A & HPC Support",
+      "description": "Troubleshooting algorithms, cloud tools, and shared compute.",
+      "threads": [
+        {
+          "title": "Best practice for moving 4TB of HIPAA data into the secure enclave?",
+          "author": "Dr. S. Reyes",
+          "replies": 9,
+          "views": 234,
+          "last_active": "6 hours ago"
+        },
+        {
+          "title": "OSC GPU queue tips — H100 vs A100 for finetuning a 13B model",
+          "author": "Dr. C. Mendez",
+          "replies": 14,
+          "views": 401,
+          "last_active": "yesterday"
+        },
+        {
+          "title": "Reproducible MLOps stack for grant-funded work — what is everyone using?",
+          "author": "Dr. J. Okonkwo",
+          "replies": 22,
+          "views": 555,
+          "last_active": "3 days ago"
+        },
+        {
+          "title": "Drone imagery preprocessing — orthomosaic pipelines that scale",
+          "author": "Dr. T. Wilson",
+          "replies": 5,
+          "views": 117,
+          "last_active": "1 week ago"
+        }
+      ]
+    },
+    {
+      "id": "curriculum",
+      "name": "Curriculum & Teaching Resources",
+      "description": "Sharing embedded AI syllabi and classroom materials across colleges.",
+      "threads": [
+        {
+          "title": "Course module: Responsible AI for first-year engineering students",
+          "author": "Dr. J. Okonkwo",
+          "replies": 7,
+          "views": 198,
+          "last_active": "yesterday"
+        },
+        {
+          "title": "Pharmacy elective on ML for personalized therapeutics — feedback wanted",
+          "author": "Dr. P. Singh",
+          "replies": 3,
+          "views": 64,
+          "last_active": "2 days ago"
+        },
+        {
+          "title": "Capstone project pool for cross-college student teams (Fall 2026)",
+          "author": "Dr. E. Walker",
+          "replies": 12,
+          "views": 320,
+          "last_active": "4 hours ago"
+        },
+        {
+          "title": "Slide deck: NLP for non-CS faculty (90 minutes)",
+          "author": "Dr. N. Brooks",
+          "replies": 8,
+          "views": 175,
+          "last_active": "3 days ago"
+        }
+      ]
+    }
+  ]
+}

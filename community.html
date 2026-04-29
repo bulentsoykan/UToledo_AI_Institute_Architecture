@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Community of Practice &mdash; UToledo AI Institute</title>
+  <meta name="description" content="UToledo AI Community of Practice portal: faculty directory, research showcase, and discussion forums bridging teaching and research." />
+  <link rel="stylesheet" href="community.css" />
+</head>
+<body>
+
+<!-- =======================
+     Header / masthead
+     ======================= -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <nav class="top-nav" aria-label="Primary site navigation">
+      <a href="index.html">Architecture</a>
+      <a class="active" href="community.html" aria-current="page">Community of Practice</a>
+    </nav>
+    <div class="eyebrow">The University of Toledo &middot; AI Institute</div>
+    <h1>Community of Practice</h1>
+    <p class="lede">A bridge between teaching and research &mdash; connect with faculty, share expertise, and form interdisciplinary teams for upcoming grants.</p>
+  </div>
+</header>
+
+<!-- =======================
+     Section tabs
+     ======================= -->
+<nav class="tabs" aria-label="Portal sections">
+  <div class="tabs-inner">
+    <a class="tab" data-tab="dashboard" href="#dashboard">Home</a>
+    <a class="tab" data-tab="directory" href="#directory">Faculty Directory</a>
+    <a class="tab" data-tab="showcase"  href="#showcase">Research Showcase</a>
+    <a class="tab" data-tab="forums"    href="#forums">Forums</a>
+  </div>
+</nav>
+
+<main class="wrap" id="main">
+
+  <!-- =======================
+       View: Dashboard
+       ======================= -->
+  <section class="view" id="view-dashboard" aria-labelledby="dashboard-heading">
+    <h2 id="dashboard-heading" class="sr-only">Dashboard</h2>
+
+    <div class="stats" id="dashboard-stats" aria-label="Portal statistics">
+      <!-- Populated by community.js -->
+    </div>
+
+    <div class="dashboard-grid">
+      <article class="panel">
+        <div class="panel-head">
+          <h3>Featured Faculty</h3>
+          <a href="#directory" class="link-arrow" data-tab-link="directory">Browse all &rarr;</a>
+        </div>
+        <div id="featured-faculty" class="card-row">
+          <!-- Populated by community.js -->
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <h3>Active Projects</h3>
+          <a href="#showcase" class="link-arrow" data-tab-link="showcase">All projects &rarr;</a>
+        </div>
+        <div id="featured-projects" class="card-row">
+          <!-- Populated by community.js -->
+        </div>
+      </article>
+
+      <article class="panel panel-full">
+        <div class="panel-head">
+          <h3>Recent Discussions</h3>
+          <a href="#forums" class="link-arrow" data-tab-link="forums">All forums &rarr;</a>
+        </div>
+        <ul id="recent-threads" class="thread-list compact">
+          <!-- Populated by community.js -->
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- =======================
+       View: Faculty Directory
+       ======================= -->
+  <section class="view" id="view-directory" hidden aria-labelledby="directory-heading">
+    <div class="section-head">
+      <h2 id="directory-heading">Faculty Expertise Directory</h2>
+      <p class="section-sub">Filter by Core AI Technology (horizontals) or Application Domain (verticals) to find collaborators for upcoming grants.</p>
+    </div>
+
+    <div class="filter-bar" role="region" aria-label="Faculty filters">
+      <label class="search">
+        <span class="sr-only">Search by name, department, or project</span>
+        <input id="search-input" type="search" placeholder="Search by name, department, or project&hellip;" autocomplete="off" />
+      </label>
+
+      <div class="filter-group">
+        <span class="filter-label">Core AI Technology</span>
+        <div class="chip-row" id="filter-tech" role="group" aria-label="Filter by core AI technology">
+          <!-- Chips populated by community.js -->
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Application Domain</span>
+        <div class="chip-row" id="filter-domain" role="group" aria-label="Filter by application domain">
+          <!-- Chips populated by community.js -->
+        </div>
+      </div>
+
+      <div class="filter-actions">
+        <span class="result-count" id="result-count" aria-live="polite"></span>
+        <button class="btn btn-ghost" id="clear-filters" type="button">Clear filters</button>
+      </div>
+    </div>
+
+    <div id="faculty-grid" class="faculty-grid" aria-live="polite">
+      <!-- Populated by community.js -->
+    </div>
+  </section>
+
+  <!-- =======================
+       View: Research Showcase
+       ======================= -->
+  <section class="view" id="view-showcase" hidden aria-labelledby="showcase-heading">
+    <div class="section-head">
+      <h2 id="showcase-heading">Research Showcase</h2>
+      <p class="section-sub">Active projects spanning the institute's vertical domains and horizontal AI capabilities.</p>
+    </div>
+    <div id="projects-grid" class="projects-grid">
+      <!-- Populated by community.js -->
+    </div>
+  </section>
+
+  <!-- =======================
+       View: Forums
+       ======================= -->
+  <section class="view" id="view-forums" hidden aria-labelledby="forums-heading">
+    <div class="section-head">
+      <h2 id="forums-heading">Discussion Forums</h2>
+      <p class="section-sub">Pre-proposal discovery, technical support, and curriculum sharing across UToledo.</p>
+    </div>
+    <div id="forums-list" class="forums-list">
+      <!-- Populated by community.js -->
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>The University of Toledo AI Institute &middot; Community of Practice</div>
+    <div>
+      <a href="index.html">Architecture</a>
+      &middot;
+      <a href="#dashboard" data-tab-link="dashboard">Dashboard</a>
+    </div>
+  </div>
+</footer>
+
+<script src="community.js" defer></script>
+</body>
+</html>
