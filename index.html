@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>UToledo AI Institute — Architecture</title>
+<style>
+  :root {
+    --blue-900: #0b1f3a;
+    --blue-800: #13294b;
+    --blue-700: #1c3a6b;
+    --blue-600: #2a4f8f;
+    --blue-100: #e6ecf5;
+    --gold-600: #c8941d;
+    --gold-500: #f0a500;
+    --gold-400: #ffb81c;
+    --gold-100: #fff3d6;
+    --paper:   #faf8f4;
+    --ink:     #1b1f27;
+    --muted:   #5b6271;
+    --line:    #e3e1da;
+    --line-2:  #d6d3ca;
+    --shadow:  0 1px 2px rgba(11,31,58,.06), 0 8px 24px rgba(11,31,58,.06);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: ui-sans-serif, -apple-system, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.55;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Header */
+  .masthead {
+    background: linear-gradient(180deg, var(--blue-900) 0%, var(--blue-800) 100%);
+    color: #fff;
+    border-bottom: 4px solid var(--gold-400);
+  }
+  .masthead-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 28px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold-400);
+  }
+  .masthead h1 {
+    margin: 0;
+    font-size: clamp(28px, 3.4vw, 40px);
+    font-weight: 700;
+    letter-spacing: -.01em;
+  }
+  .lede {
+    margin: 4px 0 0;
+    color: #d8dee9;
+    max-width: 70ch;
+    font-size: 16px;
+  }
+
+  /* Layout */
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 36px 32px 64px;
+  }
+
+  /* Section title bar */
+  .pillar {
+    margin: 28px 0 0;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .pillar-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    background: var(--blue-800);
+    color: #fff;
+    border-bottom: 3px solid var(--gold-400);
+  }
+  .pillar-num {
+    flex: 0 0 auto;
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    background: var(--gold-400);
+    color: var(--blue-900);
+    font-weight: 800;
+    display: grid;
+    place-items: center;
+    font-size: 16px;
+  }
+  .pillar-titles {
+    display: flex;
+    flex-direction: column;
+  }
+  .pillar-title {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: .01em;
+  }
+  .pillar-sub {
+    font-size: 12.5px;
+    color: var(--gold-400);
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-weight: 600;
+  }
+  .pillar-body {
+    padding: 22px 22px 6px;
+  }
+  .pillar-intro {
+    margin: 0 0 18px;
+    color: var(--muted);
+    max-width: 78ch;
+  }
+
+  /* Card grids */
+  .grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(12, 1fr);
+    padding-bottom: 18px;
+  }
+  .col-6 { grid-column: span 6; }
+  .col-4 { grid-column: span 4; }
+  .col-3 { grid-column: span 3; }
+  .col-12 { grid-column: span 12; }
+  @media (max-width: 900px) {
+    .col-6, .col-4, .col-3 { grid-column: span 12; }
+  }
+
+  .card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px 16px;
+    background: #fff;
+    transition: border-color .15s, transform .15s;
+  }
+  .card:hover {
+    border-color: var(--blue-600);
+    transform: translateY(-1px);
+  }
+  .card h4 {
+    margin: 0 0 4px;
+    font-size: 14.5px;
+    color: var(--blue-800);
+    font-weight: 700;
+    letter-spacing: .005em;
+  }
+  .card p {
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .card .tag {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--gold-600);
+    font-weight: 700;
+  }
+
+  /* Two-arm middle row (Academic + Research) */
+  .arms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 18px;
+  }
+  @media (max-width: 980px) {
+    .arms { grid-template-columns: 1fr; }
+  }
+
+  /* Matrix block (research) */
+  .matrix {
+    margin: 6px 0 18px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .matrix h3 {
+    margin: 0;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--blue-800);
+    background: var(--blue-100);
+    border-bottom: 1px solid var(--line);
+    font-weight: 700;
+  }
+  .matrix-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .matrix-cell {
+    padding: 12px 14px;
+    border-top: 1px solid var(--line);
+  }
+  .matrix-cell:nth-child(odd) { border-right: 1px solid var(--line); }
+  .matrix-cell h4 {
+    margin: 0 0 2px;
+    font-size: 13.5px;
+    color: var(--blue-800);
+  }
+  .matrix-cell p {
+    margin: 0;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  @media (max-width: 700px) {
+    .matrix-grid { grid-template-columns: 1fr; }
+    .matrix-cell:nth-child(odd) { border-right: none; }
+  }
+
+  /* Cross-matrix: verticals (rows) × horizontals (columns) */
+  .matrix-scroll {
+    margin: 6px 0 18px;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--line);
+  }
+  .research-matrix {
+    display: grid;
+    grid-template-columns: minmax(190px, 1.3fr) repeat(4, minmax(170px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    min-width: 880px;
+  }
+  .rm-corner,
+  .rm-col-head,
+  .rm-row-head,
+  .rm-cell {
+    background: #fff;
+    padding: 12px 14px;
+  }
+  .rm-corner {
+    background: var(--blue-100);
+  }
+  .rm-col-head {
+    background: var(--blue-800);
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    line-height: 1.3;
+  }
+  .rm-row-head {
+    background: var(--blue-100);
+    color: var(--blue-800);
+    font-weight: 700;
+    font-size: 13.5px;
+    line-height: 1.35;
+  }
+  .rm-row-head small {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  .rm-cell {
+    font-size: 12.5px;
+    color: var(--ink);
+    line-height: 1.45;
+    border-top: 3px solid var(--gold-400);
+  }
+  .rm-cell strong {
+    color: var(--blue-800);
+    font-weight: 700;
+  }
+  .rm-empty {
+    background: repeating-linear-gradient(
+      45deg,
+      #faf8f4,
+      #faf8f4 7px,
+      #efece3 7px,
+      #efece3 8px
+    );
+    border-top: none;
+  }
+
+  /* Foundation layers */
+  .layer {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px 16px 6px;
+    background: #fff;
+    margin-bottom: 14px;
+    border-left: 4px solid var(--gold-400);
+  }
+  .layer-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .layer-head h3 {
+    margin: 0;
+    font-size: 15px;
+    color: var(--blue-800);
+    font-weight: 700;
+  }
+  .layer-tag {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-weight: 700;
+  }
+
+  /* Governance band style on top pillar */
+  .pillar.governance .pillar-head {
+    background: linear-gradient(90deg, var(--blue-900), var(--blue-700));
+  }
+
+  /* Footer note */
+  .footnote {
+    margin-top: 36px;
+    padding: 18px 22px;
+    border-left: 4px solid var(--gold-400);
+    background: #fff;
+    border-radius: 6px;
+    color: var(--muted);
+    font-size: 14px;
+    box-shadow: var(--shadow);
+  }
+  .footnote strong { color: var(--blue-800); }
+
+  /* Print */
+  @media print {
+    body { background: #fff; }
+    .pillar, .card, .layer, .footnote { box-shadow: none; }
+    .masthead { border-bottom-width: 2px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="eyebrow">The University of Toledo</div>
+    <h1>AI Institute &mdash; Organizational Architecture</h1>
+    <p class="lede">A four-pillar framework: governance on top, an academic teaching arm and an applied research matrix in the middle, and a shared infrastructure foundation underneath.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- Pillar 1: Governance -->
+  <section class="pillar governance">
+    <div class="pillar-head">
+      <div class="pillar-num">1</div>
+      <div class="pillar-titles">
+        <div class="pillar-sub">The Oversight Layer</div>
+        <div class="pillar-title">Governance &amp; Policy</div>
+      </div>
+    </div>
+    <div class="pillar-body">
+      <p class="pillar-intro">A central committee establishes policy for ethical AI use, data security, and compliance — ensuring alignment across the university.</p>
+      <div class="grid">
+        <div class="card col-6">
+          <h4>University AI Policy</h4>
+          <p>Central committee setting standards for ethics, data security, and federal compliance.</p>
+        </div>
+        <div class="card col-6">
+          <h4>Operational Scope</h4>
+          <p>Covers three domains: <strong>Academics</strong> (student use &amp; integrity), <strong>Operations</strong> (administration &amp; IT), and <strong>Research</strong> (data governance &amp; federal compliance).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillar 2: Academic Hub -->
+  <section class="pillar">
+    <div class="pillar-head">
+      <div class="pillar-num">2</div>
+      <div class="pillar-titles">
+        <div class="pillar-sub">The Teaching Arm</div>
+        <div class="pillar-title">The Academic Hub</div>
+      </div>
+    </div>
+    <div class="pillar-body">
+      <p class="pillar-intro">Curriculum, student engagement, and faculty development.</p>
+      <div class="grid">
+        <div class="card col-4">
+          <h4>Curriculum Integration</h4>
+          <p>Manages 29+ existing courses and aligns new programs with employer needs.</p>
+          <span class="tag">29+ courses</span>
+        </div>
+        <div class="card col-4">
+          <h4>Community of Practice</h4>
+          <p>Bridges teaching and research across different disciplines, connecting faculty to share methods, datasets, and tooling.</p>
+          <span class="tag">Bridges teaching &amp; research</span>
+        </div>
+        <div class="card col-4">
+          <h4>Social Impact</h4>
+          <p>AI communication, ethics, and social-media impact &mdash; broader implications for students.</p>
+          <span class="tag">Ethics &amp; society</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillar 3: Applied Research Matrix -->
+  <section class="pillar">
+    <div class="pillar-head">
+      <div class="pillar-num">3</div>
+      <div class="pillar-titles">
+        <div class="pillar-sub">The Research Arm</div>
+        <div class="pillar-title">Applied Research Matrix</div>
+      </div>
+    </div>
+    <div class="pillar-body">
+      <p class="pillar-intro">Core AI technologies (columns) intersect with UToledo's application domains (rows). Every cell carries a concrete project the institute can pursue at that intersection.</p>
+
+      <div class="matrix-scroll">
+        <div class="research-matrix" role="table" aria-label="Applied Research Matrix mapping core AI technologies to application domains">
+          <!-- Header row -->
+          <div class="rm-corner" role="columnheader" aria-label="Application domain"></div>
+          <div class="rm-col-head" role="columnheader">Machine Learning &amp; Foundation Models</div>
+          <div class="rm-col-head" role="columnheader">Computer Vision &amp; Perception</div>
+          <div class="rm-col-head" role="columnheader">Natural Language Processing</div>
+          <div class="rm-col-head" role="columnheader">Trustworthy &amp; Secure AI</div>
+
+          <!-- Healthcare row -->
+          <div class="rm-row-head" role="rowheader">
+            Healthcare &amp; Medicine
+            <small>UTMC partner</small>
+          </div>
+          <div class="rm-cell">
+            <strong>Genomic prediction</strong> &amp; readmission risk stratification from patient cohorts.
+          </div>
+          <div class="rm-cell">
+            <strong>Medical imaging diagnostics</strong> &mdash; tumor detection across MRI and CT.
+          </div>
+          <div class="rm-cell">
+            <strong>Electronic Health Records</strong> &mdash; analysis of unstructured clinical notes.
+          </div>
+          <div class="rm-cell">
+            <strong>HIPAA-compliant deployment</strong> &amp; bias auditing in clinical decision support.
+          </div>
+
+          <!-- Advanced Manufacturing row -->
+          <div class="rm-row-head" role="rowheader">
+            Advanced Manufacturing &amp; Logistics
+            <small>NOIC partner</small>
+          </div>
+          <div class="rm-cell">
+            <strong>Predictive maintenance</strong> for glass manufacturing furnaces.
+          </div>
+          <div class="rm-cell">
+            <strong>Automated defect detection</strong> on assembly lines.
+          </div>
+          <div class="rm-cell">
+            <strong>Technician shift logs</strong> &amp; supplier-contract mining for root-cause analysis.
+          </div>
+          <div class="rm-cell">
+            <strong>Secure industrial IoT</strong> &mdash; protecting plant networks and supply-chain integrity.
+          </div>
+
+          <!-- Environmental row -->
+          <div class="rm-row-head" role="rowheader">
+            Environmental &amp; Water Science
+            <small>Lake Erie focus</small>
+          </div>
+          <div class="rm-cell">
+            <strong>Fluid dynamics</strong> and climate modeling.
+          </div>
+          <div class="rm-cell">
+            <strong>Satellite monitoring</strong> for Lake Erie algal bloom detection.
+          </div>
+          <div class="rm-cell">
+            <strong>Regulatory &amp; watershed-report synthesis</strong> from EPA filings and scientific literature.
+          </div>
+          <div class="rm-cell">
+            <strong>Verifiable forecasts</strong> &amp; tamper-resistant water-quality sensor networks.
+          </div>
+
+          <!-- Energy & Materials row -->
+          <div class="rm-row-head" role="rowheader">
+            Energy &amp; Materials Science
+            <small>Great Lakes Partnership, INL</small>
+          </div>
+          <div class="rm-cell">
+            <strong>Battery materials discovery</strong> &amp; solar-cell efficiency optimization.
+          </div>
+          <div class="rm-cell">
+            <strong>Microscopy characterization</strong> of materials and drone inspection of solar farms.
+          </div>
+          <div class="rm-cell">
+            <strong>Patent &amp; literature mining</strong> to accelerate materials discovery.
+          </div>
+          <div class="rm-cell">
+            <strong>Secure digital twins</strong> for nuclear engineering (INL partnership).
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillar 4: Infrastructure & Enablement -->
+  <section class="pillar">
+    <div class="pillar-head">
+      <div class="pillar-num">4</div>
+      <div class="pillar-titles">
+        <div class="pillar-sub">The Foundation</div>
+        <div class="pillar-title">Infrastructure &amp; Enablement</div>
+      </div>
+    </div>
+    <div class="pillar-body">
+      <p class="pillar-intro">The physical and human resources that make the research matrix work — four stacked layers from hardware up to people.</p>
+
+      <div class="layer">
+        <div class="layer-head">
+          <h3>Layer 1 &middot; Research Compute Infrastructure</h3>
+          <span class="layer-tag">Hardware</span>
+        </div>
+        <div class="grid">
+          <div class="card col-4">
+            <h4>Local AI Clusters</h4>
+            <p>On-campus GPU servers for prototyping, training, and sensitive data that cannot leave campus.</p>
+          </div>
+          <div class="card col-4">
+            <h4>State &amp; National Grid</h4>
+            <p>OARnet &amp; OSC fiber to Ohio Supercomputer Center and Oak Ridge National Lab for massive-scale jobs.</p>
+          </div>
+          <div class="card col-4">
+            <h4>Commercial Cloud</h4>
+            <p>AWS &amp; Azure for hosted models, public-facing tools, and scalable storage.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="layer">
+        <div class="layer-head">
+          <h3>Layer 2 &middot; Research Data Architecture</h3>
+          <span class="layer-tag">The Missing Fuel</span>
+        </div>
+        <div class="grid">
+          <div class="card col-4">
+            <h4>Secure Data Enclaves</h4>
+            <p>Isolated, HIPAA-grade environments for clinical and federal defense data.</p>
+          </div>
+          <div class="card col-4">
+            <h4>Centralized Repositories</h4>
+            <p>Curated datasets &mdash; Lake Erie water, manufacturing sensors &mdash; available to UToledo researchers.</p>
+          </div>
+          <div class="card col-4">
+            <h4>Data Governance Policy</h4>
+            <p>Strict rules for ownership, privacy, and sharing.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="layer">
+        <div class="layer-head">
+          <h3>Layer 3 &middot; AI Systems Design, Analysis Engineering &amp; Deployment</h3>
+          <span class="layer-tag">Software</span>
+        </div>
+        <div class="grid">
+          <div class="card col-6">
+            <h4>MLOps</h4>
+            <p>Code versioning, model monitoring, and reproducible research workflows.</p>
+          </div>
+          <div class="card col-6">
+            <h4>Software Engineering Support</h4>
+            <p>Dedicated staff who wrap research models in clean interfaces so partners (hospitals, businesses) can actually use them.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="layer">
+        <div class="layer-head">
+          <h3>Layer 4 &middot; Research Faculty Enablement</h3>
+          <span class="layer-tag">Human Support</span>
+        </div>
+        <div class="grid">
+          <div class="card col-4">
+            <h4>Data Science Consulting</h4>
+            <p>"Office hours" pairing domain experts with AI experts to apply ML to specific lab work.</p>
+          </div>
+          <div class="card col-4">
+            <h4>Grant Development Support</h4>
+            <p>Help drafting the technical computational-plan sections of NSF, NIH, and DOE proposals.</p>
+          </div>
+          <div class="card col-4">
+            <h4>Training Workshops</h4>
+            <p>Boot camps on local hardware, cloud platforms, and secure data enclaves.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <p class="footnote">
+    <strong>Why this structure.</strong> It separates the academic mission from the research engine while building a bridge between them, and it ensures faculty have the hardware and human support they need to succeed.
+  </p>
+
+</main>
+
+</body>
+</html>
